@@ -19,7 +19,6 @@ for line in f:
             stringIPA += alphabet[ch]
         else:
             stringIPA += ch
-            print(ch)
     w.write(stringIPA)
     stringIPA = ''
 
