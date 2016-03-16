@@ -37,12 +37,12 @@ def concordance(dirPath):
                 else:
                     freqDic[wordS] += 1
         f.close()
-    i = 1    
-    w = open(dirPath+'concordance.txt', 'w', encoding='utf-8')        
+    #i = 1    
+    w = open(dirPath+'concordance.tsv', 'w', encoding='utf-8')        
     dicSorted = sorted(freqDic.items(), key=lambda tup: tup[1], reverse=True)
     for word in dicSorted:
-        w.write(str(i)+'. '+word[0]+' : '+str(word[1])+'\n')
-        i+=1    
+        w.write(word[0]+'\t'+str(word[1])+'\n')
+        #i+=1    
     w.close()
     
 def main():
