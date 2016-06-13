@@ -31,13 +31,13 @@ print(cur.description)
 #import csv
 #path = 'C:\\Users\\TK_adm\\Documents\\HSE\\comp_ling_progr\\python_adv\\api\\vk auth\\vk_api_auth-master\\'
 
-cur.execute('DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci')
+#cur.execute('DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci')
 #ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-try:
-    cur.execute('create database guest1_VKTatianaKononova;')
-except:
-    print('database already exists')
+#try:
+    #cur.execute('create database guest1_VKTatianaKononova;')
+#except:
+    #print('database already exists')
 cur.execute('use guest1_VKTatianaKononova;')
 
 path = ''
@@ -55,7 +55,7 @@ with open(path+'usermeta_97.csv', 'r', encoding='utf-8') as csvf:
 
 with open(path+'alluserwall_97.csv', 'r', encoding='utf-8') as csvf:
 
-    cur.execute('create table VKwall (userid INT(10), date VARCHAR(20), text VARCHAR(10000));')       
+    cur.execute('create table VKwall (userid INT(10), date VARCHAR(20), text VARCHAR(10000)) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;')       
     wall = csv.DictReader(csvf, delimiter='\t')
     for row in wall:
         
