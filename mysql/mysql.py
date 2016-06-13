@@ -35,7 +35,7 @@ with open(path+'usermeta_97.csv', 'r', encoding='utf-8') as csvf:
     #meta = csv.reader(csv, delimiter='\t')
     #for row in meta:
         
-    cur.execute('create table VKmeta (userid INT(10), birthdate VARCHAR(10), sex INT(1), PRIMARY KEY(usesrid));')       
+    cur.execute('create table VKmeta (userid INT(10), birthdate VARCHAR(10), sex INT(1), PRIMARY KEY(userid));')       
     meta = csv.DictReader(csvf, delimiter='\t')
     for row in meta:
         string="'"+str(row['userid'])+"','"+str(row['birthdate']+"','"+str(row['sex'])+"'")
