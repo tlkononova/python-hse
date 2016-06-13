@@ -54,9 +54,13 @@ with open(path+'alluserwall_97.csv', 'r', encoding='utf-8') as csvf:
     cur.execute('create table VKwall (userid INT(10), date VARCHAR(20), text VARCHAR(10000));')       
     wall = csv.DictReader(csvf, delimiter='\t')
     for row in wall:
+        
         string="'"+str(row['userid'])+"','"+str(row['date']+"','"+str(row['text'])+"'")
         #print (string)
-        cur.execute('insert into VKwall (userid, date, text) value ('+string+');')
+        try:
+            cur.execute('insert into VKwall (userid, date, text) value ('+string+');')
+        except:
+            print(str(row['text']))
 
 
         
