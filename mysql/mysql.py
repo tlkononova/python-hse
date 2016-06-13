@@ -30,8 +30,10 @@ print(cur.description)
 
 #import csv
 #path = 'C:\\Users\\TK_adm\\Documents\\HSE\\comp_ling_progr\\python_adv\\api\\vk auth\\vk_api_auth-master\\'
-
-cur.execute('create database guest1_VKTatianaKononova;')
+try:
+    cur.execute('create database guest1_VKTatianaKononova;')
+except:
+    continue
 cur.execute('use guest1_VKTatianaKononova;')
 
 path = ''
@@ -49,7 +51,7 @@ with open(path+'usermeta_97.csv', 'r', encoding='utf-8') as csvf:
 
 with open(path+'alluserwall_97.csv', 'r', encoding='utf-8') as csvf:
 
-    cur.execute('create table VKwall (userid INT(10), date VARCHAR(10), text VARCHAR(10000), PRIMARY KEY(userid));')       
+    cur.execute('create table VKwall (userid INT(10), date VARCHAR(20), text VARCHAR(10000));')       
     wall = csv.DictReader(csvf, delimiter='\t')
     for row in wall:
         string="'"+str(row['userid'])+"','"+str(row['date']+"','"+str(row['text'])+"'")
