@@ -39,7 +39,7 @@ with open(path+'usermeta_97.csv', 'r', encoding='utf-8') as csvf:
     meta = csv.DictReader(csvf, delimiter='\t')
     for row in meta:
         string="'"+str(row['userid'])+"','"+str(row['birthdate']+"','"+str(row['sex'])+"'")
-        #print (string)
+        print (string)
         cur.execute('insert into VKmeta (userid, birthdate, sex) value ('+string+');')
         
 conn.commit()        
