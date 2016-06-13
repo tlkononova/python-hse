@@ -30,6 +30,10 @@ print(cur.description)
 
 #import csv
 #path = 'C:\\Users\\TK_adm\\Documents\\HSE\\comp_ling_progr\\python_adv\\api\\vk auth\\vk_api_auth-master\\'
+
+cur.execute('DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci')
+#ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 try:
     cur.execute('create database guest1_VKTatianaKononova;')
 except:
