@@ -33,7 +33,7 @@ print(cur.description)
 try:
     cur.execute('create database guest1_VKTatianaKononova;')
 except:
-    continue
+    print('database already exists')
 cur.execute('use guest1_VKTatianaKononova;')
 
 path = ''
